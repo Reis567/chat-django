@@ -15,8 +15,15 @@
             <a href="#" class="text-xl text-white ">Argon chat </a>
         </div> 
         <div class="flex items-center space-x-4">
+            {% if request.user.is_authenticated %}
+            <p class="text-white mr-8">Welcome {{request.user.username}} !</p>
+            <a href="#" class="text-white hover:text-purple-900 transition easy-in-out duration-500">Rooms </a>
+            <a href="{% url 'logout' %}" class="text-white hover:text-purple-900 transition easy-in-out duration-500">Logout </a>
+            {% else %}
             <a href="#" class="text-white hover:text-purple-900 transition easy-in-out duration-500">Login </a>
             <a href="{% url 'signup' %}" class="px-5 py-3 shadow-md rounded-xl bg-white text-purple-900 hover:text-white hover:bg-purple-700 hover:shadow-lg transition easy-in-out duration-500">Sign up </a>
+            {% endif %}
+            
         </div>
     </nav>
 
