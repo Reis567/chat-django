@@ -76,12 +76,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djangochatproject.wsgi.application'
 ASGI_APPLICATION = 'djangochatproject.asgi.application'
+
 CHANNEL_LAYERS = {
-    'default':{
-        'BACKEND':'channels.layers.InMemoryChannelLayer'
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
     }
 }
-
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
